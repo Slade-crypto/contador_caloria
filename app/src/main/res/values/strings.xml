@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">contador_calorias</string>
+    <string name="app_name">contadorcalorias</string>
+    <string name="boas_vindas">Bem vindo ao Calories Counter</string>
+    <string name="boas_vindas_title">Bem vindo ao\nCalories Counter</string>
+    <string name="start_button_text">Vamos la</string>
+    <string name="descricao">Adicione a quantidade de calorias\nconsumidas no dia sem preocupação</string>
+    <string name="title_calorias">O que você comeu hoje?</string>
+    <string name="informe_alimento">Informe os alimentos</string>
+    <string name="hint_alimento">Alimento</string>
+    <string name="informe_calorias">Informe as calorias</string>
+    <string name="hint_calorias">Calorias</string>
+    <string name="obrigado_resultado">Obrigado!\nAqui esta sua quantidade total de calorias do dia:</string>
 </resources>

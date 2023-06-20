@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/secondary_orange"
+    tools:context=".CaloriesCounterScreen">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_toolbar_gradient"
+                android:title="@string/title_calorias"
+
+                android:titleTextColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/arrowIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="350dp"
+                android:contentDescription="iconArrow"
+
+                android:src="@drawable/ic_arrow_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/linearPrincipal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="50dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+        tools:ignore="InvalidId">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textoAlimentos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="@string/informe_alimento"
+
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/alimentosET"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/campo_texto_arredondado"
+                    android:elevation="5dp"
+                    android:ems="7"
+                    android:hint="@string/hint_alimento"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    android:paddingStart="7dp"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/white"
+                    android:textColorHint="#DAFFFFFF"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textoCalorias"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="@string/informe_calorias"
+
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/caloriasET"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/campo_texto_arredondado"
+                    android:elevation="5dp"
+                    android:ems="7"
+                    android:hint="@string/hint_calorias"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    android:paddingStart="7dp"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/white"
+                    android:textColorHint="#DAFFFFFF"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/alimentosET2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/campo_texto_arredondado"
+                android:elevation="5dp"
+                android:ems="7"
+                android:hint="@string/hint_alimento"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:paddingStart="7dp"
+                android:textAlignment="viewStart"
+                android:textColor="@color/white"
+                android:textColorHint="#DAFFFFFF"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/caloriasET2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/campo_texto_arredondado"
+                android:elevation="5dp"
+                android:ems="7"
+                android:hint="@string/hint_calorias"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:paddingStart="7dp"
+                android:textAlignment="viewStart"
+                android:textColor="@color/white"
+                android:textColorHint="#DAFFFFFF"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/alimentosET3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/campo_texto_arredondado"
+                android:elevation="5dp"
+                android:ems="7"
+                android:hint="@string/hint_alimento"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:paddingStart="7dp"
+                android:textAlignment="viewStart"
+                android:textColor="@color/white"
+                android:textColorHint="#DAFFFFFF"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/caloriasET3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/campo_texto_arredondado"
+                android:elevation="5dp"
+                android:ems="7"
+                android:hint="@string/hint_calorias"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:paddingStart="7dp"
+                android:textAlignment="viewStart"
+                android:textColor="@color/white"
+                android:textColorHint="#DAFFFFFF"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/alimentosET4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/campo_texto_arredondado"
+                android:elevation="5dp"
+                android:ems="7"
+                android:hint="@string/hint_alimento"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:paddingStart="7dp"
+                android:textAlignment="viewStart"
+                android:textColor="@color/white"
+                android:textColorHint="#DAFFFFFF"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/caloriasET4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/campo_texto_arredondado"
+                android:elevation="5dp"
+                android:ems="7"
+                android:hint="@string/hint_calorias"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:paddingStart="7dp"
+                android:textAlignment="viewStart"
+                android:textColor="@color/white"
+                android:textColorHint="#DAFFFFFF"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/alimentosET5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/campo_texto_arredondado"
+                android:elevation="5dp"
+                android:ems="7"
+                android:hint="@string/hint_alimento"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:paddingStart="7dp"
+                android:textAlignment="viewStart"
+                android:textColor="@color/white"
+                android:textColorHint="#DAFFFFFF"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/caloriasET5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/campo_texto_arredondado"
+                android:elevation="5dp"
+                android:ems="7"
+                android:hint="@string/hint_calorias"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:paddingStart="7dp"
+                android:textAlignment="viewStart"
+                android:textColor="@color/white"
+                android:textColorHint="#DAFFFFFF"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/alimentosET6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/campo_texto_arredondado"
+                android:elevation="5dp"
+                android:ems="7"
+                android:hint="@string/hint_alimento"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:paddingStart="7dp"
+                android:textAlignment="viewStart"
+                android:textColor="@color/white"
+                android:textColorHint="#DAFFFFFF"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/caloriasET6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/campo_texto_arredondado"
+                android:elevation="5dp"
+                android:ems="7"
+                android:hint="@string/hint_calorias"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:paddingStart="7dp"
+                android:textAlignment="viewStart"
+                android:textColor="@color/white"
+                android:textColorHint="#DAFFFFFF"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/confirmarButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confirmar"
+        android:elevation="30dp"
+        android:background="@drawable/botao_arredondado"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearPrincipal" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
