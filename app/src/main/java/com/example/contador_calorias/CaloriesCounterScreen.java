@@ -1,5 +1,6 @@
 package com.example.contador_calorias;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -13,10 +14,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class CaloriesCounterScreen extends AppCompatActivity {
 
+    private SharedPreferences sp;
+    private SharedPreferences.Editor spEditor;
     private Button confirmarBtn;
     private ImageView arrowIcon;
     private EditText[] alimentosET = new EditText[6];
     private EditText[] caloriasET = new EditText[6];
+    String alimentoText;
+    String caloriasText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +46,13 @@ public class CaloriesCounterScreen extends AppCompatActivity {
         confirmarBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CaloriesCounterScreen.this, ResultadoScreen.class);
-                startActivity(intent);
-                obterTextoDosCampos();
+                obterDadosCampos();
+                if (!caloriasText.isEmpty() && !alimentoText.isEmpty()) {
+                    Intent intent = new Intent(CaloriesCounterScreen.this, ResultadoScreen.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(getApplicationContext(), "Preencha todos os campos!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -56,26 +65,24 @@ public class CaloriesCounterScreen extends AppCompatActivity {
         });
     }
 
-    private void obterTextos() {
-        SharedPreferences sharedPreferences = getSharedPreferences(TEXTOS, MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
+    private void obterDadosCampos() {
+        int totalCalorias = 0;
+        sp = getSharedPreferences("PREFS_KEY", Context.MODE_PRIVATE);
+        spEditor = sp.edit();
 
         for (int i = 0; i < alimentosET.length; i++) {
-            String alimentoText = alimentosET[i].getText().toString().trim();
-            String caloriasText = caloriasET[i].getText().toString().trim();
+            alimentoText = alimentosET[i].getText().toString().trim();
+            caloriasText = caloriasET[i].getText().toString().trim();
 
-            if (!alimentoText.isEmpty()) {
-                editor.putString("alimento_" + i, alimentoText);
-            }
-
-            if (!caloriasText.isEmpty()) {
-                editor.putString("calorias_" + i, caloriasText);
+            if (!caloriasText.isEmpty() && !alimentoText.isEmpty()) {
+                int calorias = Integer.parseInt(caloriasText);
+                totalCalorias += calorias;
+                spEditor.putString("caloriasTotal", String.valueOf(totalCalorias));
             }
         }
 
-        editor.apply();
+        spEditor.apply();
 
-        Toast.makeText(this, "Textos salvos com sucesso!", Toast.LENGTH_SHORT).show();
     }
 
 }

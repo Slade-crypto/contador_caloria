@@ -9,5 +9,5 @@
     <string name="hint_alimento">Alimento</string>
     <string name="informe_calorias">Informe as calorias</string>
     <string name="hint_calorias">Calorias</string>
-    <string name="obrigado_resultado">Obrigado!\nAqui esta sua quantidade total de calorias do dia:</string>
+    <string name="obrigado_resultado">Obrigado!\nQuantidade total de calorias consumidas no dia:</string>
 </resources>
